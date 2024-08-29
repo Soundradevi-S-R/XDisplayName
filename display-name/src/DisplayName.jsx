@@ -31,18 +31,20 @@ function DisplayName(){
         <form onSubmit={displayName}>
 
                 <h1>Full Name Display</h1>
-                <div> First Name: <input type="text" name="firstName" value={firstName} onChange={handleChange}></input></div><br />
-                <div> Last Name: <input  type="text" name="lastName" value={lastName} onChange={handleChange}></input></div><br/>
+                <label>First Name:</label> <input type="text" name="firstName" value={firstName} onChange={handleChange} /><br />
+                <label>Last Name:</label><input  type="text" name="lastName" value={lastName} onChange={handleChange} /><br/>
                 <button type="submit">Submit</button>
          </form>
-         <br/>
-        <div>{
-            showName && 
-            (<label>Full Name: {firstName} {lastName} </label>)
-            }   
-        </div>
+         
+           {showName && 
+            (<p>
+                Full Name: {firstName} {lastName}
+              </p> 
+              
+            )}   
+       
     
       </div>);
 
-}
+};
 export default DisplayName;
