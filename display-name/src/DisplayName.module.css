@@ -1,0 +1,7 @@
+.form_div{
+    
+    flex-direction:column;
+    margin:20px;
+    padding:10px;
+    gap:8px;
+}
