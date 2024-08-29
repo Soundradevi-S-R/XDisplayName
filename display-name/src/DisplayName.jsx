@@ -7,18 +7,15 @@ function DisplayName(){
 
     const [firstName,setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const[fullName,setFullName] = useState("");
+    const[showName,setShowName] = useState(false);
     
    
     const displayName = (e)=>{   
         e.preventDefault();
         //fullName = firstName +" "+lastName;
         if(firstName !=="" && lastName !==""){
-            setFullName(firstName +" "+lastName);
-            console.log(fullName);
-        } else {
-            alert("Enter name in the required fields");
-        }      
+           setShowName(true);            
+        }   
     };
 
     const handleChange = (e) => {
@@ -34,12 +31,16 @@ function DisplayName(){
         <form onSubmit={displayName}>
 
                 <h1>Full Name Display</h1>
-                <div> First Name: <input type="text" name="firstName" value={firstName} onChange={handleChange}></input></div>
+                <div> First Name: <input type="text" name="firstName" value={firstName} onChange={handleChange}></input></div><br />
                 <div> Last Name: <input  type="text" name="lastName" value={lastName} onChange={handleChange}></input></div><br/>
                 <button type="submit">Submit</button>
          </form>
          <br/>
-        <div><label>Full Name: {fullName} </label></div>
+        <div>{
+            showName && 
+            (<label>Full Name: {firstName} {lastName} </label>)
+            }   
+        </div>
     
       </div>);
 
